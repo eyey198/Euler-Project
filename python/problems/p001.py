@@ -1,6 +1,12 @@
 import logging
 
-def fast_main():
+correct_answer = 233168
+
+def p001():
+    return p001_c()
+
+#first attemp
+def p001_a():
     three_multi = 3
     five_multi = 5
     sum = 0
@@ -16,22 +22,29 @@ def fast_main():
             three_multi += 3
         else:
             raise Exception('not possible')
-    print sum
+    print('p001={}'.format(sum))
+    return sum
 
-def short_main():
+#sec attemp
+def p001_b():
     num_list = [i for i in range(1, 1000) if (i%3 == 0) or (i%5 == 0)]
-    print sum(num_list)
+    print('p001={}'.format(sum(num_list)))
+    return num_list
 
-def short_main2():
+#best solution!
+def p001_c():
     mult_sum = 0
     for i in xrange(1000):
         if (i%3 == 0) or (i%5 == 0):
             mult_sum += i
-    print mult_sum
+    print('p001={}'.format(mult_sum))
     return mult_sum
+
+
+
 if __name__=="__main__":
     logging.basicConfig(level=logging.DEBUG)
-    fast_main()
-    short_main()
-    short_main2()
+    p001_a()
+    p001_b()
+    p001_c()
     

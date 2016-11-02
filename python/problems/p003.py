@@ -1,9 +1,11 @@
 import logging
 
-#num = 13195
+correct_answer = 6857
+
+#num_from_example = 13195
 num = 600851475143
 
-def fast_main():
+def p003():
     global num
     max_div = 1
     while num != 1:
@@ -13,7 +15,7 @@ def fast_main():
         if (max_div < smallest_div):
             logging.info('update: old_max={}, new_max={}'.format(max_div, smallest_div))
             max_div = smallest_div
-    print max_div
+    print('p003={}'.format(max_div))
     return max_div
 
 def get_smallest_div(num):
@@ -28,6 +30,6 @@ def is_prime(num):
     return False
 
 if __name__=="__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    fast_main()
+    logging.basicConfig()
+    p003()
     

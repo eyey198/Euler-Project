@@ -1,8 +1,10 @@
 import logging
 
-def fast_main():
+correct_answer = 4613732
+
+def p002():
    result = sum(get_next_even_fib())
-   print result
+   print('p002={}'.format(result))
    return result
 
 
@@ -17,6 +19,6 @@ def get_next_even_fib():
         a,b = b,a+b
 
 if __name__=="__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    fast_main()
+    logging.basicConfig()
+    p002()
     
